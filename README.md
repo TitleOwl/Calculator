@@ -4,7 +4,8 @@
 # By Group 9
 
 
-## Calculator
+## CalculatorTest.java
+
 |                Scientific / Dark                | Standard / Colored |
 :------------------------------------------------:|:-------------------|
  ![Dark calculator screenshot](screenshots/scientific-dark.png) | ![Colored calculator screenshot](screenshots/standard-light.png)
