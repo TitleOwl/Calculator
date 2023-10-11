@@ -95,6 +95,10 @@ public class CalculatorUI {
                 return firstNumber % secondNumber;
             case '^':
                 return Math.pow(firstNumber, secondNumber);
+            case '√':
+                return Math.sqrt(secondNumber);
+            case 'l':
+                return Math.log(secondNumber);
             default:
                 return secondNumber;
         }
@@ -454,13 +458,15 @@ public class CalculatorUI {
                 return;
 
             if (go) {
-                typedValue = Math.sqrt(Double.parseDouble(inputScreen.getText()));
+//                typedValue = Math.sqrt(Double.parseDouble(inputScreen.getText()));
+                typedValue = calculate(typedValue, Double.parseDouble(inputScreen.getText()), selectedOperator);
                 if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(typedValue))) {
                     inputScreen.setText(String.valueOf((int) typedValue));
                 } else {
                     inputScreen.setText(String.valueOf(typedValue));
                 }
                 selectedOperator = '√';
+                go = true;
                 addToDisplay = false;
             }
         });
@@ -494,13 +500,15 @@ public class CalculatorUI {
                 return;
 
             if (go) {
-                typedValue = Math.log(Double.parseDouble(inputScreen.getText()));
+                typedValue = calculate(typedValue, Double.parseDouble(inputScreen.getText()), selectedOperator);
+//                typedValue = Math.log(Double.parseDouble(inputScreen.getText()));
                 if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(typedValue))) {
                     inputScreen.setText(String.valueOf((int) typedValue));
                 } else {
                     inputScreen.setText(String.valueOf(typedValue));
                 }
                 selectedOperator = 'l';
+                go = true;
                 addToDisplay = false;
             }
         });
