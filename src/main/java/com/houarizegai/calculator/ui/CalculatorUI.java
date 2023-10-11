@@ -26,11 +26,11 @@ public class CalculatorUI {
     private static final int MARGIN_Y = 60;
 
     private final JFrame window;
-    private JComboBox<String> comboCalculatorType;
+    public JComboBox<String> comboCalculatorType;
     private JComboBox<String> comboTheme;
-    private JTextField inputScreen;
+    public JTextField inputScreen;
     private JButton btnC;
-    private JButton btnBack;
+    public JButton btnBack;
     private JButton btnMod;
     private JButton btnDiv;
     private JButton btnMul;
@@ -48,9 +48,9 @@ public class CalculatorUI {
     private JButton btn9;
     private JButton btnPoint;
     private JButton btnEqual;
-    private JButton btnRoot;
-    private JButton btnPower;
-    private JButton btnLog;
+    public JButton btnRoot;
+    public JButton btnPower;
+    public JButton btnLog;
 
     private char selectedOperator = ' ';
     private boolean go = true; // For calculate with Opt != (=)
