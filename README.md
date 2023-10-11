@@ -1,24 +1,13 @@
-# Calculator
-A very basic calculator application created using Java **Swing**. 
+# ITCS473 Project Assignment 1
+# Unit Test for Open-Source Software Projects
 
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+# By Group 9
 
-## Screenshots
+
+## Calculator
 |                Scientific / Dark                | Standard / Colored |
 :------------------------------------------------:|:-------------------|
  ![Dark calculator screenshot](screenshots/scientific-dark.png) | ![Colored calculator screenshot](screenshots/standard-light.png)
-
-
-## Installation 🔌
-1. Press the **Fork** button (top right the page) to save copy of this project on your account.
-
-2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
-
-       git clone https://github.com/HouariZegai/Calculator.git
-3. Imported it in Intellij IDEA or any other Java IDE.
-4. Run the application :D
-
-# 💡 Sample Test Cases and templates are added for the following:
 
 
 # ❓ testAddition
@@ -709,17 +698,18 @@ Identify parameters, return types, return values, and exception behavior:
         (C1b1, C2b3) -> (0, 1), Expected value = 0
 
    
- # ❓ testModeButtonsVisibility
+ # ❓ testBackButton
 
-## ⛳ Goal: To test the visibility of the root, power, and log buttons when the scientific mode is selected.
-Identify testable functions: initCalculatorTypeSelector()
+## ⛳ Goal: To verify the functionality of the back button (<-). Specifically, the test aims to ensure that when the back button is clicked, it correctly removes the last digit from the input displayed on the calculator screen.
+Identify testable functions: initButtons() -> label: ‘<-’ (btnBack) and inputScreen()
 Identify parameters, return types, return values, and exception behavior:
 
-  -	Parameters: no explicit parameters
+
+  -	Parameters: String(number) from(inputScreen().setText())
   
-  -	Return type: void
+  -	Return type: String
   
-  -	Return value: N/A 
+  -	Return value: Number after back button clicked.
   
   -	Exceptional behavior: N/A
 
@@ -729,13 +719,14 @@ Identify parameters, return types, return values, and exception behavior:
 
     1.Interface-based
      
-        C1 = button is visible?
+        C1 = String is empty
     	
       
     2.Functionality-based
      
-        C1 = mode selected 
-        
+        C1 = integer
+        C2 = Is 1 digit?  
+
 -	Partition characteristics:
 
     -	Interface-based
@@ -749,14 +740,39 @@ Identify parameters, return types, return values, and exception behavior:
 
         | Characteristics       | b1              | b2             | 
         | :--                   | :--             | :--        |    
-        | C1 = mode selected | Standard  | Scientific |
+        | C1 = integer | Positive integer  | Negative integer |
+     	  | C2 = Is 1 digit? | True  | False |
 
+-	Identify (possible) values: 
+    -	Interface-based
+
+    
+        | Characteristics       | b1              | b2             |
+        | :--                   | :--             | :--            | 
+        | C1 = String is empty  | "" | "12345" |
+        
+
+
+    - Functionality-based
+        | Characteristics       | b1              | b2             | b3     |
+        | :--                   | :--             | :--            | :--    |
+        | C1 = integer         | 3     | -123   |
+        | C2 = Is 1 digit?        | 3 or -3     | 123 or -123  |
 
 
 -	Combine partitions and test values:
-    -	PWC
-
-        (C1b1) -> (“Standard”), expected value = (False, False, False)
+    -	MBCC
+      
+          Bases are (C1b1, C2b1) and (C1b2, C2b1)
      	
-        (C1b2) -> (“Scientific”), expected value = (True, True, True)
+		  (C1b1, C2b1) -> (positive integer, True) -> “3”, expected value = 0
+     	
+		  (C1b1, C2b2) -> (positive integer, False) -> “123”, expected value = 12
+     	
+		  (C1b2, C2b1) -> (negative integer, True) -> “-3”, expected value = -
+     	
+		  (C1b2, C2b2) -> (negative integer, False) -> “-123”, expected value = -12
+     	
+
+     	
      	
