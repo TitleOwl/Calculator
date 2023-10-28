@@ -66,39 +66,85 @@ Identify parameters, return types, return values, and exception behavior
         | C2 = secondNumber can be... | -999.9  | 0 | 666 |
 
 
-    - Functionality-based
+    -	Functionality-based
+
         | Characteristics       | b1              | b2             | b3     |
         | :--                   | :--             | :--            | :--    |
-        | C1 = Result.          | -333            | 0              | 4995   |
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0 |
 
 
 
 -	Combine partitions and test values: 
-    -	ACoC ( C1 and C2 = Interface-based )
-             ( C3 = Functionality-based )
+    -	## ACoC
+      
+      ## (C1,C2 Interface-based)
+ 
+      ## (C3 Functionality-based)
     
         
-        (C1b1, C2b1, C3b2) -> (-5, -999.9), expected value = -1004.9
-    
-        (C1b1, C2b2, C3b2) -> (-5, 0), expected value = -5
+      (C1b1, C2b1, C3b1) -> (-5, -999 .9, Less than 0), Expected value = -1004.9
      	
-        (C1b1, C2b3, C3b1) -> (-5, 666), expected value = 661
+	(C1b1, C2b1, C3b2) -> (-5, -999.9, Equal to 0), Expected value = -1004.9  impossible test
 
+	(C1b1, C2b1, C3b3) -> (-5, -999.9, Greater than 0), Expected value = -1004.9  # impossible test
+	
+	
+	(C1b1, C2b2, C3b1) -> (-5, 0, Less than 0), Expected value = -5
 
+	(C1b1, C2b2, C3b2) -> (-5, 0, Equal to 0), Expected value = -5 # impossible test
 
-       	(C1b2, C2b1, C3b1) -> (0, -999.9), expected value = -999.9
-          	
-       	(C1b2, C2b2, C3b2) -> (0, 0), expected value = 0
-          	
-       	(C1b2, C2b3, C3b1) -> (0, 666), expected value = 666
-          	
+	(C1b1, C2b2, C3b3) -> (-5, 0, Greater than 0), Expected value = -5 # impossible test
 
+	
+	
+	(C1b1, C2b3, C3b1) -> (-5, 666, Less than 0), Expected value = 661 # impossible test
 
-      	(C1b3, C2b1, C3b3) -> (5000, -999.9), expected value = 4000.1
-         	
-      	(C1b3, C2b2, C3b3) -> (5000, 0), expected value = 5000
-         	
-      	(C1b3, C2b3, C3b3) -> (5000, 666), expected value = 5666
+	(C1b1, C2b3, C3b2) -> (-5, 666, Equal to 0), Expected value = 661 # impossible test
+
+	(C1b1, C2b3, C3b3) -> (-5, 666, Greater than 0), Expected value = 661 
+	
+	
+	(C1b2, C2b1, C3b1) -> (0, -5 , Less than 0), Expected value = -5
+
+	(C1b2, C2b1, C3b2) -> (0,-5, Equal to 0), Expected value = -5 # impossible test
+
+	(C1b2, C2b1, C3b3) -> (0, -5, Greater than 0), Expected value = -5 # impossible test
+	
+	
+	(C1b2, C2b2, C3b1) -> (0, 0, Less than 0), Expected value = 0 # impossible test
+
+	(C1b2, C2b2, C3b2) -> (0, 0, Equal to 0), Expected value = 0
+
+	(C1b2, C2b2, C3b3) ->  (0, 0, Greater than 0), Expected value = 0 # impossible test
+
+	(C1b2, C2b3, C3b1) -> (0, 666, Less than 0), Expected value = 666 # impossible test
+
+	(C1b2, C2b3, C3b2) -> (0, 666, Equal to 0), Expected value = 666 # impossible test
+
+	(C1b2, C2b3, C3b3) -> (0, 666, Greater than 0), Expected value = 666
+	
+	
+	(C1b3, C2b1, C3b1) -> (5000, -999.9, Less than 0), Expected value = 4000.1 # impossible test
+
+	(C1b3, C2b1, C3b2) -> (5000, -999.9, Equal to 0), Expected value = 4000.1 # impossible test
+
+	(C1b3, C2b1, C3b3) -> (5000, -999.9, Greater than 0), Expected value = 4000.1
+	
+	
+	(C1b3, C2b2, C3b1) -> (5000, 0, Less than 0), Expected value = 5000 # impossible test
+
+	(C1b3, C2b2, C3b2) -> (5000, 0, Equal to 0), Expected value = 5000 # impossible test
+
+	(C1b3, C2b2, C3b3) -> (5000, 0, Greater than 0), Expected value = 5000
+
+	
+	
+	(C1b3, C2b3, C3b1) -> (5000, 666, Less than 0), Expected value = 5600 # impossible test
+
+	(C1b3, C2b3, C3b2) -> (5000, 666, Equal to 0), Expected value = 5600 # impossible test
+
+	(C1b3, C2b3, C3b3) -> (5000, 666, Greater than 0), Expected value = 5600
+
     
 
  	
@@ -155,10 +201,11 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -9  | 0 | -666 |
 
 
-    - Functionality-based
+    -	Functionality-based
+
         | Characteristics       | b1              | b2             | b3     |
         | :--                   | :--             | :--            | :--    |
-        | C1 = Result.          | -285           | 0              | 5   |
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0 |
 
 
 
@@ -166,33 +213,81 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	ACoC (C1,C2 Interface-based)
- 
-          (C3 Functionality-based)
+    -	## ACoC
       
-        (C1b1, C2b1, C3b2) -> (-77.7, -9), expected value = -68.7
-    
-        (C1b1, C2b2, C3b2) -> (-77.7, 0), expected value = -77.7
+      ## (C1,C2 Interface-based)
+ 
+      ## (C3 Functionality-based)
+      
+      (C1b1, C2b1, C3b1) -> (-77.7, -9, Less than 0), Expected value = -68.7 
      	
-        (C1b1, C2b3, C3b1) -> (-77.7, 666), expected value = -743.7
+	(C1b1, C2b1, C3b2) -> (-77.7, -9, Equal to 0), Expected value = -68.7 # impossible test
+
+	(C1b1, C2b1, C3b3) -> (-77.7, -9, Greater than 0), Expected value = -68.7   # impossible test
+	
+	
+
+	(C1b1, C2b2, C3b1) -> (-77.7, 0, Less than 0), Expected value = -77.7 
+
+	(C1b1, C2b2, C3b2) -> (-77.7, 0, Equal to 0), Expected value = -77.7  # impossible test
+
+	(C1b1, C2b2, C3b3) -> (-77.7, 0, Greater than 0), Expected value = -77.7  # impossible test
+
+	
+	
+	(C1b1, C2b3, C3b1) -> (-77.7, -666, Less than 0), Expected value = 588.3 
+
+	(C1b1, C2b3, C3b2) -> (-77.7, -666, Equal to 0), Expected value = 588.3  # impossible test
+
+	(C1b1, C2b3, C3b3) -> (-77.7, -666, Greater than 0), Expected value = 588.3  # impossible test
+	
+	
+
+	(C1b2, C2b1, C3b1) -> (0, -9, Less than 0), Expected value = -9 
+
+	(C1b2, C2b1, C3b2) -> (0, -9, Equal to 0), Expected value = -9  # impossible test
+
+	(C1b2, C2b1, C3b3) -> (0, -9, Greater than 0), Expected value = -9  # impossible test
+	
+	
+
+	(C1b2, C2b2, C3b1) -> (0, 0, Less than 0), Expected value = 0  # impossible test
+
+	(C1b2, C2b2, C3b2) -> (0, 0, Equal to 0), Expected value = 0
+
+	(C1b2, C2b2, C3b3) ->  (0, 0, Greater than 0), Expected value = 0  # impossible test
 
 
-        
-        (C1b2, C2b1, C3b3) -> (0, -9), expected value = 9
-     	
-        (C1b2, C2b2, C3b2) -> (0, 0), expected value = 0
-     	
-        (C1b2, C2b3, C3b1) -> (0, 666), expected value = -666
 
+	(C1b2, C2b3, C3b1) -> (0, -666, Less than 0), Expected value = -666
 
-     	
-        
-        (C1b3, C2b1, C3b3) -> (5, -9), expected value = 14
-     	
-        (C1b3, C2b2, C3b3) -> (5, 0), expected value = 5
-     	
-        (C1b3, C2b3, C3b1) -> (5, 666), expected value = -661
+	(C1b2, C2b3, C3b2) -> (0, -666, Equal to 0), Expected value = -666  # impossible test
 
+	(C1b2, C2b3, C3b3) -> (0, -666, Greater than 0), Expected value = -666 # impossible test
+	
+	
+
+	(C1b3, C2b1, C3b1) -> (5, -9, Less than 0), Expected value = -4 
+
+	(C1b3, C2b1, C3b2) -> (5, -9, Equal to 0), Expected value = -4  # impossible test
+
+	(C1b3, C2b1, C3b3) -> (5, -9, Greater than 0), Expected value = -4 # impossible test
+	
+	
+
+	(C1b3, C2b2, C3b1) -> (5, 0, Less than 0), Expected value = 5  # impossible test
+
+	(C1b3, C2b2, C3b2) -> (5, 0, Equal to 0), Expected value = 5  # impossible test
+
+	(C1b3, C2b2, C3b3) -> (5, 0, Greater than 0), Expected value = 5 
+
+	
+	
+	(C1b3, C2b3, C3b1) -> (5, -666, Less than 0), Expected value = 671  # impossible test
+
+	(C1b3, C2b3, C3b2) -> (5, -666, Equal to 0), Expected value = 671  # impossible test
+
+	(C1b3, C2b3, C3b3) -> (5, -666, Greater than 0), Expected value = 671 
 
 
 
@@ -252,29 +347,44 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -100  | 0 | 777 |
 
 
-    - Functionality-based
+    -	Functionality-based
+
         | Characteristics       | b1              | b2             | b3     |
         | :--                   | :--             | :--            | :--    |
-        | C1 = Result.          | -36519            | 0              | 200  |
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0 |
 
 
 
 -	Combine partitions and test values:
-    -	ECC   (C1,C2 Interface-based)
+    -	## ECC
+      
+      ## (C1,C2 Interface-based)
+ 
+      ## (C3 Functionality-based)
     	
-           (C3 Functionality-based)
 
-       (C1b1, C2b2, C3b2) -> (-100, 0), Expected value = 0
+	(C1b1, C2b1, C3b1) -> (-47, -100, Less than 0), Expected value = 4700 # Impossible test
 
-       (C1b2, C2b3, C3b2) -> (0, 591), Expected value = 0
-       
-       (C1b3, C2b1, C3b1) -> (777, -47), Expected value = -36519
-       
-       Add block3 that result greater than 0 from Functionality-based characteristic (check positive number result).
-       
-       (C1b1, C2b1, C3b3) -> (-50, -40), Expected value = 2000
-       
-       (C1b3, C2b3, C3b3) -> (70, 3) Expected value = 210
+	(C1b2, C2b2, C3b2) -> (0, 0, Equal to 0), Expected value = 0
+
+	(C1b3, C2b3, C3b3) -> (591, 777, Greater than 0), Expected value = 459207
+
+	## Add new combination.
+
+	(C1b1, C2b3, C3b1) -> (-47, 777, Less than 0), Expected value = -36519
+
+	## TestDivision
+
+	(C1b1, C2b1, C3b3) -> (-15, -32, Greater than 0), Expected value = 0.46875
+
+	(C1b2, C2b2, C3b5) -> (0, 0, NaN), Expected value = NaN
+
+	(C1b1, C2b3, C3b1) -> (-15, 333, Less than 0), Expected value = -0.04504504504
+
+	(C1b2, C1b1, C3b2) -> (0, -15, Equal to 0), Expected value = 0
+
+	(C1b3, C2b2, C3b2) -> (666, 0, Infinity), Expected value = Infinity
+
             	
 
 # ❓ testDivision
@@ -332,31 +442,34 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -32  | 0 | 333 |
 
 
-    - Functionality-based
-        | Characteristics       | b1              | b2             | b3     | b4     | b5     |
+    -	Functionality-based
+
+        | Characteristics       | b1              | b2             | b3     |  b4     | b5     |
         | :--                   | :--             | :--            | :--    | :--    | :--    |
-        | C1 = Result.          | -0.04504504504            | 0     | 0.46875  | Infinity | NaN |
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0 | Infinity | NaN |
 
 
 
 -	Combine partitions and test values:
-    -	ECC (C1,C2 Interface-base)
+    -	## ECC
       
-          (C3 Functionality-based)
+      ## (C1,C2 Interface-based)
  
-         (C1b1, C2b1, C3b3) -> (-15, -32), Expected value = 0.46875
+      ## (C3 Functionality-based)
+ 
+	(C1b1, C2b1, C3b3) -> (-15, -32), Expected value = 0.46875
          
-         (C1b2, C2b2, C3b5) -> (0, 0), Expected value = NaN
+  	(C1b2, C2b2, C3b5) -> (0, 0), Expected value = NaN
          
-         (C1b3, C2b3, C3b3) -> (666, 333), Expected value = 2
+  	(C1b3, C2b3, C3b3) -> (666, 333), Expected value = 2
          
-         Add block1, 2 and 4 that result less than 0 and Infinity from Functionality-based characteristic (check negative number result).
+  	Add block1, 2 and 4 that result less than 0 and Infinity from Functionality-based characteristic (check negative number result).
          
-         (C1b1, C2b3, C3b1) -> (-15, 333), Expected value = -0.04504504504
+  	(C1b1, C2b3, C3b1) -> (-15, 333), Expected value = -0.04504504504
          
-         (C1b2, C1b1, C3b2) -> (0, -15), Expected value = 0
+  	(C1b2, C1b1, C3b2) -> (0, -15), Expected value = 0
          
-         (C1b3, C2b2, C3b4) -> (666, 0), Expected value = Infinity
+  	(C1b3, C2b2, C3b4) -> (666, 0), Expected value = Infinity
 
 
 # ❓ testModulo
@@ -414,45 +527,69 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -30  | 0 | 2 |
 
 
-    - Functionality-based
-        | Characteristics       | b1              | b2             | b3     | b4     |
-        | :--                   | :--             | :--            | :--    | :--    |
-        | C1 = Result.          | -15            | 0     | 1  | NaN |
+    -	Functionality-based
+
+        | Characteristics       | b1              | b2             | b3     |  b4     | 
+        | :--                   | :--             | :--            | :--    | :--    | 
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0  | NaN |
 
 
 
 -	Combine partitions and test values:
-    -	MBCC (C1,C2 Interface-based)
- 
-           (C3 Functionality-based)
+    -	## MBCC
       
-        [A B C]
+
+        ## [A B C]
     
-        [1 2 3]
+        ## [1 2 3]
      	
-      
-        Base: (A,1) and (C,2)
-    
-        (A,1): (A,2), (A,3), (B,1), (C,1)
-    
-        (C,2): (C,3), (B,2)
-      
-        (A,1,C3b1) -> (-15, -30), Expected value = -15
-      
-        (A,2,C3b4) -> (-15, 0), Expected value = NaN
-      
-        (A,3,C3b1) -> (-15, 2), Expected value = -1
-      
-        (B,1,C3b2) -> (0, -30), Expected value = 0
-    
-        (C,1,C3b3) -> (666, -30), Expected value = 6
-    
-        (C,2,C3b4) -> (666, 0), Expected value = NaN
-    
-        (C,3,C3b2) -> (666, 2), Expected value = 0
-    
-        (B,2,C3b4) -> (0, 0), Expected value = NaN
- 
+	## [x y z v]
+
+	Base: (A,1,x), (A,1,y), (A,1,z), (A,1,v)
+
+	(A,1,x): -> (-15,-30,Less than 0), Expected value = -15
+
+	(A,2,x), -> (-15,0,Less than 0), Expected value = NaN # impossible test
+
+	(A,3,x), -> (-15,2,Less than 0), Expected value = -1 # impossible test
+
+	(B,1,x), -> (0,-15,Less than 0), Expected value = 0 # impossible test
+
+	(C,1,x) -> (666,-30,Less than 0), Expected value = NaN # impossible test
+
+	
+	(A,1,y): -> (-15,-30, Equal to 0), Expected value = -15 # impossible test
+
+	(A,2,y), -> (-15,0, Equal to 0), Expected value = NaN # impossible test
+
+	(A,3,y), -> (-15,2, Equal to 0), Expected value = -1 # impossible test
+
+	(B,1,y), -> (0,-15, Equal to 0), Expected value = 0
+
+	(C,1,y) -> (666,-30, Equal to 0), Expected value = 6 # impossible test
+
+	
+	(A,1,z): -> (-15,-30, Greater than 0), Expected value = -15 # impossible test
+
+	(A,2,z), -> (-15,0, Greater than 0), Expected value = NaN # impossible test
+
+	(A,3,z), -> (-15,2, Greater than 0), Expected value = -1 # impossible test
+
+	(B,1,z), -> (0,-15, Greater than 0), Expected value = 0 # impossible test
+
+	(C,1,z) -> (666,-30, Greater than 0), Expected value = 6
+
+	(A,1,v): -> (-15,-30, NaN), Expected value = -15 # impossible test
+
+	(A,2,v), -> (-15,0, NaN), Expected value = NaN
+
+	(A,3,v), -> (-15,2, NaN), Expected value = -1 # impossible test
+
+	(B,1,v), -> (0,-15, NaN), Expected value = 0 # impossible test
+
+	(C,1,v) -> (666,-30, NaN), Expected value = 6 # impossible test
+
+
 
   # ❓ testPower
 
@@ -509,17 +646,20 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -2  | -3 | 0 | 4 | 5 |
 
 
-    - Functionality-based
-        | Characteristics       | b1              | b2             | b3     | b4     | 
+    -	Functionality-based
+
+        | Characteristics       | b1              | b2             | b3     |  b4     | 
         | :--                   | :--             | :--            | :--    | :--    | 
-        | C1 = Result.          | -8341.609375     | 0     | 915.0625  | Infinity |
+        | C1 = Result. | Less than 0   | Equal to 0 | Greater than 0 | Infinity | 
 
 
 
 -	Combine partitions and test values:
-    -	PWC (C1,C2 Interface-based)
+    -	## PWC
+      
+      	## (C1,C2 Interface-based)
  
-          (C3 Functionality-based)
+      	## (C3 Functionality-based)
       
         [A B C]
     
@@ -620,17 +760,20 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -11  | 0 | 23 |
 
 
-    - Functionality-based
-        | Characteristics       | b1              | b2             | b3     |
+    -	Functionality-based
+
+        | Characteristics       | b1              | b2             | b3     |  
         | :--                   | :--             | :--            | :--    | 
-        | C1 = Result.          | NaN     | 0     | 4.795831523312719  | 
+        | C1 = Result. | NaN   | Equal to 0 | Greater than 0 | 
 
 
 
 -	Combine partitions and test values:
-    -	BCC (C1,C2 Functionality-based)
+    -	## BCC
       
-           (C3 Interface-based)
+      	## (C1,C2 Interface-based)
+ 
+      	## (C3 Functionality-based)
         Base = (C1b1, C2b1)
      	
         (C1b1, C2b1, C3b1) -> (0, -11), Expected value = NaN
@@ -695,17 +838,20 @@ Identify parameters, return types, return values, and exception behavior:
         | C2 = secondNumber can be... | -5  | 0 | 10 |
 
 
-    - Functionality-based
-        | Characteristics       | b1              | b2             | b3     | b4     | b5     |
-        | :--                   | :--             | :--            | :--    | :--    | :--    |
-        | C1 = Result.          | NaN     | 0     | 4.795831523312719  |  NaN | -Infinity |
+    -	Functionality-based
+
+        | Characteristics       | b1              | b2             | b3     |  b4     | b5     |
+        | :--                   | :--             | :--            | :--    | :--     |  :--     |
+        | C1 = Result.          | Less than 0 | Equal to 0     | Greater than 0 |  NaN    | -Infinity | 
 
 
 
 -	Combine partitions and test values:
-    -	BCC (C1,C2 Functionality-based)
+    -	## BCC
       
-           (C3 Interface-based)
+     	 ## (C1,C2 Interface-based)
+ 
+      	## (C3 Functionality-based)
 
         Base = (C1b1, C2b1)
      	
@@ -766,9 +912,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	PWC (C1,C2 Functionality-based)
+    -	## PWC
       
-           (C3 Interface-based)
+      	## (C1,C2 Interface-based)
+ 
+      	## (C3 Functionality-based)
       
 		(C1b1) -> (“Standard”), expected value = (False, False, False)
 
@@ -840,9 +988,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	MBCC (C1,C2 Functionality-based)
+    -	## MBCC
       
-           (C3 Interface-based)
+      	## (C1,C2 Interface-based)
+ 
+      	## (C3 Functionality-based)
       
          Bases are (C1b1, C2b1) and (C1b2, C2b1)
            
