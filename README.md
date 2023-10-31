@@ -139,11 +139,11 @@ Identify parameters, return types, return values, and exception behavior
 
 	
 	
-	(C1b3, C2b3, C3b1) -> (5000, 666, Less than 0), Expected value = 5600 # impossible test
+	(C1b3, C2b3, C3b1) -> (5000, 666, Less than 0), Expected value = 5666 # impossible test
 
-	(C1b3, C2b3, C3b2) -> (5000, 666, Equal to 0), Expected value = 5600 # impossible test
+	(C1b3, C2b3, C3b2) -> (5000, 666, Equal to 0), Expected value = 5666 # impossible test
 
-	(C1b3, C2b3, C3b3) -> (5000, 666, Greater than 0), Expected value = 5600
+	(C1b3, C2b3, C3b3) -> (5000, 666, Greater than 0), Expected value = 5666
 
     
 
@@ -198,7 +198,7 @@ Identify parameters, return types, return values, and exception behavior:
         | Characteristics       | b1              | b2             | b3     |
         | :--                   | :--             | :--            | :--    |
         | C1 = firstNumber can be... | -77.7   | 0 | 5 |
-        | C2 = secondNumber can be... | -9  | 0 | -666 |
+        | C2 = secondNumber can be... | -9  | 0 | 666 |
 
 
     -	Functionality-based
@@ -236,11 +236,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 	
 	
-	(C1b1, C2b3, C3b1) -> (-77.7, -666, Less than 0), Expected value = 588.3 
+	(C1b1, C2b3, C3b1) -> (-77.7, 666, Less than 0), Expected value = 743.7 # impossible test
 
-	(C1b1, C2b3, C3b2) -> (-77.7, -666, Equal to 0), Expected value = 588.3  # impossible test
+	(C1b1, C2b3, C3b2) -> (-77.7, 666, Equal to 0), Expected value = 743.7  # impossible test
 
-	(C1b1, C2b3, C3b3) -> (-77.7, -666, Greater than 0), Expected value = 588.3  # impossible test
+	(C1b1, C2b3, C3b3) -> (-77.7, 666, Greater than 0), Expected value = 743.7 
 	
 	
 
@@ -260,11 +260,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 
-	(C1b2, C2b3, C3b1) -> (0, -666, Less than 0), Expected value = -666
+	(C1b2, C2b3, C3b1) -> (0, 666, Less than 0), Expected value = -666
 
-	(C1b2, C2b3, C3b2) -> (0, -666, Equal to 0), Expected value = -666  # impossible test
+	(C1b2, C2b3, C3b2) -> (0, 666, Equal to 0), Expected value = -666  # impossible test
 
-	(C1b2, C2b3, C3b3) -> (0, -666, Greater than 0), Expected value = -666 # impossible test
+	(C1b2, C2b3, C3b3) -> (0, 666, Greater than 0), Expected value = -666 # impossible test
 	
 	
 
@@ -284,11 +284,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 	
 	
-	(C1b3, C2b3, C3b1) -> (5, -666, Less than 0), Expected value = 671  # impossible test
+	(C1b3, C2b3, C3b1) -> (5, 666, Less than 0), Expected value = -661  
 
-	(C1b3, C2b3, C3b2) -> (5, -666, Equal to 0), Expected value = 671  # impossible test
+	(C1b3, C2b3, C3b2) -> (5, 666, Equal to 0), Expected value = -661  # impossible test
 
-	(C1b3, C2b3, C3b3) -> (5, -666, Greater than 0), Expected value = 671 
+	(C1b3, C2b3, C3b3) -> (5, 666, Greater than 0), Expected value = -661 # impossible test
 
 
 
@@ -648,48 +648,67 @@ Identify parameters, return types, return values, and exception behavior:
       	(C3 Functionality-based)
       
         [A B C]
-    
-        [1 2 3 4 5]
-      
-        (A,1) (B,1) (C,1)
-        
-        (A,2) (B,2) (C,2)
-        
-        (A,3) (B,3) (C,3)
-        
-        (A,4) (B,4) (C,4)
-        
-        (A,5) (B,5) (C,5)
-        
-        (-5.5, -2,C3b3), expected value = 0.03305785123966942
-        
-        (-5.5, -3,C3b1), expected value = -0.006010518407212622
-        
-        (-5.5, 0,C3b3), expected value = 1
-        
-        (-5.5, 4,C3b3), expected value = 915.0625
-        
-        (-5.5, 5,C3b1), expected value = -8341.609375
-        
-        (0, -2,C3b4), expected value = Infinity
-        
-        (0, -3,C3b4), expected value = Infinity
-        
-        (0, 0,C3b3), expected value = 1
-        
-        (0, 4,C3b2), expected value = 0
-        
-        (0, 5,C3b2), expected value = 0
-        
-        (6, -2,C3b3), expected value = 0.027777777777777776
-        
-        (6, -3,C3b3), expected value = 0.004629629629629629
-        
-        (6, 0,C3b3), expected value = 1
-        
-        (6, 4,C3b3), expected value = 1296
-        
-        (6, 5,C3b3), expected value = 7776
+     	
+	[1 2 3 4 5]
+
+	[x y z v]
+
+	(A,1) (B,1) (C,1)
+
+	(A,2) (B,2) (C,2)
+
+	(A,3) (B,3) (C,3)
+
+	(A,4) (B,4) (C,4)
+
+	(A,5) (B,5) (C,5)
+
+	(A,x) (B,x) (C,x)
+
+	(A,y) (B,y) (C,y)
+
+	(A,z) (B,z) (C,z)
+
+	(A,v) (B,v) (C,v)
+	
+	(1,x) (2,x) (3,x) (4,x) (5,x)
+
+	(1,y) (2,y) (3,y) (4,y) (5,y)
+
+	(1,z) (2,z) (3,z) (4,z) (5,z)
+
+	(1,v) (2,v) (3,v) (4,v) (5,v)
+	
+	(A,1,z) => (-5.5,-2,Greater than 0), expected value = 0.03305785123966942
+
+	(B,1,v) => (0,-2,Infinity), expected value = Infinity
+
+	(C,1,x) => (6,-2,Less than 0), expected value = 0.027777777777777776 #impossible test
+
+	(A,2,x) => (-5.5,-3,Less than 0), expected value = -0.006010518407212622
+
+	(B,2,v) => (0,-3,Infinity), expected value = Infinity
+
+	(C,2,z) => (6,-3,Greater than 0), expected value = 0.004629629629629629
+
+	(A,3,z) => (-5.5,0,Greater than 0), expected value = 1
+
+	(B,3,x) => (0,0,Less than 0), expected value = 1 #impossible test
+
+	(C,3,y) => (6,0,Equal to 0), expected value = 1 #impossible test
+
+	(A,4,z) => (-5.5,4,Greater than 0), expected value = 915.0625
+
+	(B,4,y) => (0,4,Equal to 0), expected value = 0
+
+	(C,4,x) => (6,4,Less than 0), expected value = 1296 #impossible test
+
+	(A,5,x) => (-5.5,5,Less than 0), expected value = -8341.609375
+
+	(B,5,y) => (0,5,Equal to 0), expected value = 0
+
+	(C,5,z) => (6,5,Greater than 0), expected value = 7776
+
 
  # ❓ testSquareRoot
 
@@ -757,17 +776,26 @@ Identify parameters, return types, return values, and exception behavior:
 -	Combine partitions and test values:
     -	BCC
       
-       (C1,C2 Interface-based)
- 
-       (C3 Functionality-based)
+	Base = (C1b1, C2b1, C3b1) => (0,-11,NaN), expected value = NaN
 
-  	Base = (C1b1, C2b1)
-     	
-  	(C1b1, C2b1, C3b1) -> (0, -11), Expected value = NaN
-      
-  	(C1b1, C2b2, C3b2) -> (0, 0), Expected value = 0
-      
-  	(C1b1, C2b3, C3b3) -> (0, 23), Expected value = 4.795831523312719
+	(C1b1, C2b2, C3b1) => (0,0,NaN), expected value = 0 #impossible test
+
+	(C1b1, C2b3, C3b1) => (0,23,NaN), expected value = 4.795831523312719 #impossible test
+
+	(C1b1, C2b1, C3b2) => (0,-11,Equal to 0), expected value = NaN #impossible test
+
+	(C1b1, C2b1, C3b3) => (0,-11,Greater than 0), expected value = NaN #impossible test
+
+	
+	Add base to test all possible result(C3)
+
+	(C1b1, C2b2, C3b2) => (0,0,Equal to 0), expected value = 0
+
+	(C1b1, C2b3, C3b2) => (0,23,Equal to 0), expected value = 4.795831523312719 #impossible test
+	
+	(C1b1, C2b2, C3b3) => (0,0,Greater than 0), expected value = 0 #impossible test
+
+	(C1b1, C2b3, C3b3) => (0,23,Greater than 0), expected value = 4.795831523312719
 
 
  # ❓ testLog
@@ -810,9 +838,9 @@ Identify parameters, return types, return values, and exception behavior:
   
     -	Functionality-based
 
-        | Characteristics       | b1              | b2             | b3     |  b4     | b5     |
-        | :--                   | :--             | :--            | :--    | :--     |  :--     |
-        | C1 = Result.          | Less than 0 | Equal to 0     | Greater than 0 |  NaN    | -Infinity | 
+        | Characteristics       | b1              | b2             | b3     |  b4     |
+        | :--                   | :--             | :--            | :--    | :--     |
+        | C1 = Result.          | -infinity | Equal to 0     | Greater than 0 |  NaN    |
 
 
 -	Identify (possible) values: 
@@ -827,30 +855,35 @@ Identify parameters, return types, return values, and exception behavior:
 
     -	Functionality-based
 
-        | Characteristics       | b1              | b2             | b3     |  b4     | b5     |
-        | :--                   | :--             | :--            | :--    | :--     |  :--     |
-        | C1 = Result.          | Less than 0 | Equal to 0     | Greater than 0 |  NaN    | -Infinity | 
+        | Characteristics       | b1              | b2             | b3     |  b4     |
+        | :--                   | :--             | :--            | :--    | :--     | 
+        | C1 = Result.          | -infinity | Equal to 0     | Greater than 0 |  NaN    |
 
 
 
 -	Combine partitions and test values:
     -	BCC
       
-     	 (C1,C2 Interface-based)
- 
-      	(C3 Functionality-based)
+	Base = (C1b1, C2b1, C3b1) => (0,-5,-Infinity), expected value = NaN #impossible test
 
-        Base = (C1b1, C2b1)
-     	
-        (C1b1, C2b1, C3b1) -> (0, -5), Expected value = NaN
-     	
-        (C1b1, C2b2, C3b5) -> (0, 0), Expected value = -Infinity
-     	
-        (C1b1, C2b3, C2b3) -> (0, 10), Expected value = 2.302585092994046
-     	
-        From block 2 in Functionality-based characteristic
-     	
-        (C1b1, C2b3, C3b2) -> (0, 1), Expected value = 0
+	(C1b1, C2b2, C3b1) => (0,0,-Infinity), expected value = -Infinity
+
+	(C1b1, C2b3, C3b1) => (0,10,-Infinity), expected value = 2.302585092994046 #impossible test
+
+	(C1b1, C2b4, C3b1) => (0,1,-Infinity), expected value = 0 #impossible test
+
+	(C1b1, C2b1, C3b2) => (0,-5,Equal to 0), expected value = NaN #impossible test
+
+	(C1b1, C2b1, C3b3) => (0,-5,Greater than 0), expected value = NaN #impossible test
+
+	(C1b1, C2b1, C3b4) => (0,-5,NaN), expected value = NaN
+
+	Fix impossible test
+
+	(C1b1, C2b3, C3b1) => (C1b1, C2b3, C3b3) => (0,10,Greater than 0), expected value = 2.302585092994046
+
+	(C1b1, C2b4, C3b1) => (C1b1, C2b4, C3b2) => (0,1,Equal to 0), expected value = 0 
+
      	
 
    
@@ -905,9 +938,11 @@ Identify parameters, return types, return values, and exception behavior:
  
       	(C3 Functionality-based)
       
-		(C1b1) -> (“Standard”), expected value = (False, False, False)
+	C1b1,C2b1) -> (“Standard”), expected value = (False, False, False)
 
-		(C1b2) -> (“Scientific”), expected value = (True, True, True)	
+	(C1b2,C2b2) -> (“Scientific”), expected value = (True, True, True)
+
+
 
 
  
@@ -981,13 +1016,16 @@ Identify parameters, return types, return values, and exception behavior:
  
       	(C3 Functionality-based)
       
-         Bases are (C1b1, C2b1) and (C1b2, C2b1)
-           
-         (C1b1, C2b1,C3b1) -> (positive integer, True) -> “3”, expected value = 0
-           
-         (C1b1, C2b2,C3b2) -> (positive integer, False) -> “123”, expected value = 12
-           
-         (C1b2, C2b1,C3b1) -> (negative integer, True) -> “-3”, expected value = -
-           
-         (C1b2, C2b2,C3b2) -> (negative integer, False) -> “-123”, expected value = -12
+
+	Bases are (C1b1, C2b1, C3b2) and (C1b2, C2b1, C3b2)
+
+	(C1b1, C2b1, C3b2) -> (positive integer, True, False) -> “3”, expected value = 0
+
+	(C1b1, C2b2, C3b2) -> (positive integer, False, False) -> “123”, expected value = 12
+
+	(C1b2, C2b1, C3b2) -> (negative integer, True, False) -> “-3”, expected value = -
+
+	(C1b2, C2b2, C3b2) -> (negative integer, False, False) -> “-123”, expected value = -12
+
+
               	     	
