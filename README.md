@@ -268,11 +268,11 @@ Identify parameters, return types, return values, and exception behavior:
 	
 	
 
-	(C1b3, C2b1, C3b1) -> (5, -9, Less than 0), Expected value = -4 
+	(C1b3, C2b1, C3b1) -> (5, -9, Less than 0), Expected value = 14 
 
-	(C1b3, C2b1, C3b2) -> (5, -9, Equal to 0), Expected value = -4  # impossible test
+	(C1b3, C2b1, C3b2) -> (5, -9, Equal to 0), Expected value = 14  # impossible test
 
-	(C1b3, C2b1, C3b3) -> (5, -9, Greater than 0), Expected value = -4 # impossible test
+	(C1b3, C2b1, C3b3) -> (5, -9, Greater than 0), Expected value = 14 # impossible test
 	
 	
 
