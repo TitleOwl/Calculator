@@ -75,11 +75,11 @@ Identify parameters, return types, return values, and exception behavior
 
 
 -	Combine partitions and test values: 
-    -	## ACoC
+    -	 ACoC
       
-      ## (C1,C2 Interface-based)
+       (C1,C2 Interface-based)
  
-      ## (C3 Functionality-based)
+       (C3 Functionality-based)
     
         
       (C1b1, C2b1, C3b1) -> (-5, -999 .9, Less than 0), Expected value = -1004.9
@@ -213,11 +213,12 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## ACoC
+    -	ACoC
       
-      ## (C1,C2 Interface-based)
+       (C1,C2 Interface-based)
  
-      ## (C3 Functionality-based)
+       (C3 Functionality-based)
+ 	
       
       (C1b1, C2b1, C3b1) -> (-77.7, -9, Less than 0), Expected value = -68.7 
      	
@@ -356,11 +357,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## ECC
+    -	ECC
       
-      ## (C1,C2 Interface-based)
+       (C1,C2 Interface-based)
  
-      ## (C3 Functionality-based)
+       (C3 Functionality-based)
     	
 
 	(C1b1, C2b1, C3b1) -> (-47, -100, Less than 0), Expected value = 4700 # Impossible test
@@ -373,17 +374,6 @@ Identify parameters, return types, return values, and exception behavior:
 
 	(C1b1, C2b3, C3b1) -> (-47, 777, Less than 0), Expected value = -36519
 
-	## TestDivision
-
-	(C1b1, C2b1, C3b3) -> (-15, -32, Greater than 0), Expected value = 0.46875
-
-	(C1b2, C2b2, C3b5) -> (0, 0, NaN), Expected value = NaN
-
-	(C1b1, C2b3, C3b1) -> (-15, 333, Less than 0), Expected value = -0.04504504504
-
-	(C1b2, C1b1, C3b2) -> (0, -15, Equal to 0), Expected value = 0
-
-	(C1b3, C2b2, C3b2) -> (666, 0, Infinity), Expected value = Infinity
 
             	
 
@@ -451,25 +441,21 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## ECC
+    -	ECC
       
-      ## (C1,C2 Interface-based)
+       (C1,C2 Interface-based)
  
-      ## (C3 Functionality-based)
+       (C3 Functionality-based)
  
-	(C1b1, C2b1, C3b3) -> (-15, -32), Expected value = 0.46875
-         
-  	(C1b2, C2b2, C3b5) -> (0, 0), Expected value = NaN
-         
-  	(C1b3, C2b3, C3b3) -> (666, 333), Expected value = 2
-         
-  	Add block1, 2 and 4 that result less than 0 and Infinity from Functionality-based characteristic (check negative number result).
-         
-  	(C1b1, C2b3, C3b1) -> (-15, 333), Expected value = -0.04504504504
-         
-  	(C1b2, C1b1, C3b2) -> (0, -15), Expected value = 0
-         
-  	(C1b3, C2b2, C3b4) -> (666, 0), Expected value = Infinity
+	(C1b1, C2b1, C3b3) -> (-15, -32, Greater than 0), Expected value = 0.46875
+
+	(C1b2, C2b2, C3b5) -> (0, 0, NaN), Expected value = NaN
+
+	(C1b1, C2b3, C3b1) -> (-15, 333, Less than 0), Expected value = -0.04504504504
+
+	(C1b2, C1b1, C3b2) -> (0, -15, Equal to 0), Expected value = 0
+
+	(C1b3, C2b2, C3b2) -> (666, 0, Infinity), Expected value = Infinity
 
 
 # ❓ testModulo
@@ -536,14 +522,14 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## MBCC
+    -	MBCC
       
 
-        ## [A B C]
+        [A B C]
     
-        ## [1 2 3]
+        [1 2 3]
      	
-	## [x y z v]
+  	[x y z v]
 
 	Base: (A,1,x), (A,1,y), (A,1,z), (A,1,v)
 
@@ -626,7 +612,7 @@ Identify parameters, return types, return values, and exception behavior:
     
         | Characteristics       | b1              | b2             | b3     | b4     | b5     |
         | :--                   | :--             | :--            | :--    | :--    | :--    |
-        | C1 = firstNumber can be... | Less than 0   | Equal to 0 | Greater than 0 |  Greater than 0  | Greater than 0 |
+        | C1 = firstNumber can be... | Less than 0   | Equal to 0 | Greater than 0 |
         | C2 = secondNumber can be... | Less than 0 (even)  | Equal to 0 (odd) | Greater than 0 |  Greater than 0 (odd) |  Greater than 0 (even) |
   
     -	Functionality-based
@@ -655,11 +641,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## PWC
+    -	PWC
       
-      	## (C1,C2 Interface-based)
+      	(C1,C2 Interface-based)
  
-      	## (C3 Functionality-based)
+      	(C3 Functionality-based)
       
         [A B C]
     
@@ -769,18 +755,19 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## BCC
+    -	BCC
       
-      	## (C1,C2 Interface-based)
+       (C1,C2 Interface-based)
  
-      	## (C3 Functionality-based)
-        Base = (C1b1, C2b1)
+       (C3 Functionality-based)
+
+  	Base = (C1b1, C2b1)
      	
-        (C1b1, C2b1, C3b1) -> (0, -11), Expected value = NaN
+  	(C1b1, C2b1, C3b1) -> (0, -11), Expected value = NaN
       
-        (C1b1, C2b2, C3b2) -> (0, 0), Expected value = 0
+  	(C1b1, C2b2, C3b2) -> (0, 0), Expected value = 0
       
-        (C1b1, C2b3, C3b3) -> (0, 23), Expected value = 4.795831523312719
+  	(C1b1, C2b3, C3b3) -> (0, 23), Expected value = 4.795831523312719
 
 
  # ❓ testLog
@@ -847,11 +834,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## BCC
+    -	BCC
       
-     	 ## (C1,C2 Interface-based)
+     	 (C1,C2 Interface-based)
  
-      	## (C3 Functionality-based)
+      	(C3 Functionality-based)
 
         Base = (C1b1, C2b1)
      	
@@ -912,11 +899,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## PWC
+    -	PWC
       
-      	## (C1,C2 Interface-based)
+      	(C1,C2 Interface-based)
  
-      	## (C3 Functionality-based)
+      	(C3 Functionality-based)
       
 		(C1b1) -> (“Standard”), expected value = (False, False, False)
 
@@ -988,11 +975,11 @@ Identify parameters, return types, return values, and exception behavior:
 
 
 -	Combine partitions and test values:
-    -	## MBCC
+    -	MBCC
       
-      	## (C1,C2 Interface-based)
+      	(C1,C2 Interface-based)
  
-      	## (C3 Functionality-based)
+      	(C3 Functionality-based)
       
          Bases are (C1b1, C2b1) and (C1b2, C2b1)
            
