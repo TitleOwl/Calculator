@@ -370,7 +370,7 @@ Identify parameters, return types, return values, and exception behavior:
 
 	(C1b3, C2b3, C3b3) -> (591, 777, Greater than 0), Expected value = 459207
 
-	## Add new combination.
+  	Add new combination.
 
 	(C1b1, C2b3, C3b1) -> (-47, 777, Less than 0), Expected value = -36519
 
