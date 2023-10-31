@@ -806,7 +806,7 @@ Identify parameters, return types, return values, and exception behavior:
         | Characteristics       | b1              | b2             | b3     | 
         | :--                   | :--             | :--            | :--    | 
         | C1 = firstNumber can be... | Equal to 0   |  |  | 
-        | C2 = secondNumber can be... | Less than 0   | Equal to 0  | Greater than 0 | 
+        | C2 = secondNumber can be... | Less than 0   | Equal to 1  | Greater than 0 | 
   
     -	Functionality-based
 
